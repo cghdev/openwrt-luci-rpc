@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=.
 set BUILDDIR=_build
-set SPHINXPROJ=openwrt_luci_rpc
+set SPHINXPROJ=openwrt_luci_rpc_wifi
 
 if "%1" == "" goto help
 

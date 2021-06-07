@@ -14,7 +14,7 @@ import logging
 from packaging import version
 from collections import namedtuple
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
-from openwrt_luci_rpc import utilities
+from openwrt_luci_rpc_wifi import utilities
 from .constants import Constants
 from .exceptions import InvalidLuciTokenError, \
     LuciRpcMethodNotFoundError, InvalidLuciLoginError, \
@@ -149,16 +149,17 @@ class OpenWrtLuciRPC:
         """
         log.debug("Checking for connected devices")
         last_results = []
-        # rpc_sys__winfo_call = Constants.\
-        #     LUCI_RPC_SYS_PATH.format(self.host_api_url), \
-        #                       'wifi.getiwinfo', wlan_interfaces
+        rpc_sys__winfo_call = Constants.\
+            LUCI_RPC_SYS_PATH.format(self.host_api_url), \
+                              'wifi.getiwinfo', wlan_interfaces
         rpc_uci_call = Constants.LUCI_RPC_UCI_PATH.format(
             self.host_api_url), 'get_all', 'dhcp'
 
         try:
             # First, try find the associated wifi devices
-            # winfo_result = self._call_json_rpc(*rpc_sys__winfo_call)
-            arp_result = self._call_json_rpc(*self.arp_call)
+            winfo_result = self._call_json_rpc(*rpc_sys__winfo_call)
+            #arp_result = self._call_json_rpc(*self.arp_call)
+            arp_result = {}
             dhcp_result = self._call_json_rpc(*rpc_uci_call)
         except InvalidLuciTokenError:
             log.info("Refreshing login token")
@@ -194,6 +195,24 @@ class OpenWrtLuciRPC:
                     continue
 
             last_results.append(device)
+
+        if 'assoclist' in winfo_result:
+            for mac, device_entry in winfo_result['assoclist'].items():
+                device_entry['mac'] = mac
+                device_entry['host'] = self.host
+                device_entry['type'] = 'wifi'
+                device_entry['dev'] = wlan_interfaces
+
+                device_entry['hostname'] = utilities.get_hostname_from_dhcp(
+                dhcp_result, device_entry['mac'])
+
+                # device_entry['ip'] = utilities.get_key_from_dhcp(
+                #     dhcp_result, mac, 'ip')
+
+                device = namedtuple("Device", device_entry.keys())(
+                    *device_entry.values())
+
+                last_results.append(device)
 
         log.debug(last_results)
         return last_results

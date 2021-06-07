@@ -34,7 +34,7 @@ setup(
     include_package_data=True,
     keywords='openwrt-luci-rpc',
     name='openwrt-luci-rpc',
-    packages=find_packages(include=['openwrt_luci_rpc']),
+    packages=find_packages(include=['openwrt_luci_rpc_wifi']),
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,

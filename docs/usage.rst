@@ -17,7 +17,7 @@ interface.
 
 .. code:: python
 
-   from openwrt_luci_rpc import OpenWrtRpc
+   from openwrt_luci_rpc_wifi import OpenWrtRpc
 
    router = OpenWrtRpc('192.168.1.1', 'root', 'mypassword')
    result = router.get_all_connected_devices(only_reachable=True)

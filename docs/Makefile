@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = python -msphinx
-SPHINXPROJ    = openwrt_luci_rpc
+SPHINXPROJ    = openwrt_luci_rpc_wifi
 SOURCEDIR     = .
 BUILDDIR      = _build
 

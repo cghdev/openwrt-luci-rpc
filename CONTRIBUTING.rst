@@ -57,16 +57,16 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `openwrt_luci_rpc` for local development.
+Ready to contribute? Here's how to set up `openwrt_luci_rpc_wifi` for local development.
 
-1. Fork the `openwrt_luci_rpc` repo on GitHub.
+1. Fork the `openwrt_luci_rpc_wifi` repo on GitHub.
 2. Clone your fork locally::
 
-    $ git clone git@github.com:your_name_here/openwrt_luci_rpc.git
+    $ git clone git@github.com:your_name_here/openwrt_luci_rpc_wifi.git
 
 3. Install your local copy into a virtual env. Assuming you have python3 installed, this is how you set up your fork for local development::
 
-    $ cd openwrt_luci_rpc/
+    $ cd openwrt_luci_rpc_wifi/
     $ python3 -m venv .venv
     $ python setup.py develop
 
@@ -79,7 +79,7 @@ Ready to contribute? Here's how to set up `openwrt_luci_rpc` for local developme
 5. When you're done making changes, check that your changes pass flake8 and the
    tests, including testing other Python versions with tox::
 
-    $ flake8 openwrt_luci_rpc tests
+    $ flake8 openwrt_luci_rpc_wifi tests
     $ python setup.py test or py.test
     $ tox
 
@@ -103,7 +103,7 @@ Before you submit a pull request, check that it meets these guidelines:
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
 3. The pull request should work for Python 3.7, and for PyPy. Check
-   https://travis-ci.org/finbarr/openwrt_luci_rpc/pull_requests
+   https://travis-ci.org/finbarr/openwrt_luci_rpc_wifi/pull_requests
    and make sure that the tests pass for all supported Python versions.
 
 Tips
@@ -112,7 +112,7 @@ Tips
 To run a subset of tests::
 
 
-    $ python -m unittest tests.test_openwrt_luci_rpc
+    $ python -m unittest tests.test_openwrt_luci_rpc_wifi
 
 Deploying
 ---------

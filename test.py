@@ -12,7 +12,7 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(messag
 handler.setFormatter(formatter)
 root.addHandler(handler)
 
-from openwrt_luci_rpc import OpenWrtRpc
+from openwrt_luci_rpc_wifi import OpenWrtRpc
 
 env_name_ip_address = "OPENWRT_IP"
 env_name_password = "OPENWRT_PASSWORD"

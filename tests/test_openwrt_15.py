@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""Tests for `openwrt_luci_rpc` package."""
+"""Tests for `openwrt_luci_rpc_wifi` package."""
 
 import unittest
 import os
-from openwrt_luci_rpc.openwrt_luci_rpc import OpenWrtLuciRPC
+from openwrt_luci_rpc_wifi.openwrt_luci_rpc_wifi import OpenWrtLuciRPC
 
 
 class TestOpenwrt15LuciRPC(unittest.TestCase):

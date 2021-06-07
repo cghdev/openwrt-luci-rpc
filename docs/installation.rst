@@ -32,7 +32,7 @@ You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/finbarr/openwrt_luci_rpc
+    $ git clone git://github.com/finbarr/openwrt_luci_rpc_wifi
 
 Or download the `tarball`_:
 

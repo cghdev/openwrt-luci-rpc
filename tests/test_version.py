@@ -1,16 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""Tests for `openwrt_luci_rpc` package."""
+"""Tests for `openwrt_luci_rpc_wifi` package."""
 
 
 import unittest
-from openwrt_luci_rpc.utilities import is_legacy_version
+from openwrt_luci_rpc_wifi.utilities import is_legacy_version
 from packaging import version
 
 
 class TestOpenwrtLuciRPC(unittest.TestCase):
-    """Tests for `openwrt_luci_rpc` package."""
+    """Tests for `openwrt_luci_rpc_wifi` package."""
 
     def setUp(self):
         """Set up test fixtures, if any."""

@@ -1,20 +1,20 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""Tests for `openwrt_luci_rpc` package."""
+"""Tests for `openwrt_luci_rpc_wifi` package."""
 
 
 import unittest
 from unittest.mock import Mock, patch
 
-from openwrt_luci_rpc import OpenWrtRpc
-from openwrt_luci_rpc.constants import Constants
-from openwrt_luci_rpc import utilities
-from openwrt_luci_rpc.exceptions import LuciConfigError
+from openwrt_luci_rpc_wifi import OpenWrtRpc
+from openwrt_luci_rpc_wifi.constants import Constants
+from openwrt_luci_rpc_wifi import utilities
+from openwrt_luci_rpc_wifi.exceptions import LuciConfigError
 
 
 class TestOpenwrtLuciRPC(unittest.TestCase):
-    """Tests for `openwrt_luci_rpc` package."""
+    """Tests for `openwrt_luci_rpc_wifi` package."""
 
     def setUp(self):
         """Set up test fixtures, if any."""
